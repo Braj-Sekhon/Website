@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    %sveltekit.head%
+  </head>
+
+  <img src="%sveltekit.assets%/GammaBitGames.png" class="logo"></img>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">
+      %sveltekit.body%
+      <a href="/about/" class="fixed-br">About</a>
+    </div>
+  </body>
+
+</html>
+
+<style>
+  html {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 100%;
+    height: auto;
+    animation: none;
+    background-image: conic-gradient(
+      white 12.5%,
+      lightblue 37.5%,
+      orange 62.5%,
+      black 87.5%,
+      white 100%
+    );
+    border: 0px;
+    margin: 0px;
+  }
+  body {
+    min-width: 50%;
+    min-width: 700px;
+    max-width: 50%;
+    min-height: 100%;
+    max-height: 100%;
+    animation: none;
+    background-image: linear-gradient(
+      15deg,
+      lightblue 0%,
+      lightblue 32%,
+      white 32%,
+      white 33%,
+      lightblue 33%,
+      lightblue 34%,
+      white 34%,
+      white 37%,
+      orange 37%,
+      orange 100%
+    );
+    z-index: -2;
+  }
+  .white {
+    color: white;
+    border-color: white;
+  }
+  h1 {
+    visibility: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-wrap-mode: nowrap;
+    font-size: 35pt;
+    font-weight: 1000;
+    border-radius: 18px;
+    border-width: 5px;
+    border-bottom: 0;
+    border-top: 0;
+    margin: 25px;
+    padding: 10px;
+    color: rgba(0, 0, 0, 0);
+  }
+  .header {
+    visibility: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: open 0.8s ease forwards;
+    position: absolute;
+    text-wrap-mode: nowrap;
+    overflow: hidden;
+    width: 0%;
+    height: 0%;
+    font-size: 35pt;
+    font-weight: 1000;
+    border-radius: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0%;
+    padding: 0%;
+    border-radius: 18px;
+    border-width: 5px;
+    border-bottom: 0;
+    border-top: 0;
+  }
+
+  @keyframes open {
+    0% {
+      height: 0%;
+      width: 0%;
+    }
+    50% {
+      height: 100%;
+      width: 0%;
+    }
+    100% {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  * {
+    border-radius: 5px;
+    color: white;
+    border-color: white;
+    border: 2px;
+    border-style: solid;
+    margin: 10px;
+    padding: 5px;
+    font-kerning: none;
+    font-variant: small-caps;
+    font-family: serif;
+
+    font-size: calc(1em + 1pt);
+    animation: 0.5s fade-in ease;
+  }
+
+  .logo {
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    width: 200px;
+    height: auto;
+    border: 0px;
+    animation: none;
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0%;
+      fill-opacity: 0%;
+      stroke-opacity: 0%;
+      transform: translateY(-5px);
+    }
+    100% {
+      opacity: 100%;
+      fill-opacity: 100%;
+      stroke-opacity: 100%;
+      transform: translateY(0px);
+    }
+  }
+  p,
+  a,
+  .header {
+    background-color: rgba(0, 0, 0, 50%);
+  }
+  a {
+    z-index: 1;
+    position: relative;
+    display: block;
+    color: lightpink;
+    border-color: lightpink;
+  }
+  p a {
+    margin: 15px;
+    padding: 0px;
+    border: 0px;
+    display: inline;
+    text-align: center;
+  }
+  .fixed-br {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    animation: none;
+  }
+
+  .modholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    margin: 5px;
+    border: 0;
+  }
+
+  .modbox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding: 0px;
+    position: relative;
+    padding-left: 30px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .modbox * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .modbox::before {
+    content: "\2022";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: lightgreen;
+  }
+
+  .colon,
+  .separator,
+  .dash {
+    border: 0;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .external-link {
+    color: lightblue;
+    border-color: lightblue;
+  }
+
+  a::before {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    background-color: palevioletred;
+    width: 0%;
+    height: 100%;
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  a.external-link::before {
+    background-color: blue;
+  }
+  a:hover::before {
+    left: 0%;
+    width: 100%;
+  }
+
+  .status-block {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .status-block * {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    animation: none;
+  }
+  .status-block span {
+    border: 0px;
+  }
+
+  .bullet {
+    position: absolute;
+    left: 5px;
+    padding: 0px;
+    margin: 0px;
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    content: "";
+    background-color: red;
+  }
+  .status-message {
+    content: " OFFLINE";
+    left: 30px;
+    bottom: 50%;
+    transform: translateY(50%);
+    color: red;
+    font-size: 1em;
+    position: absolute;
+  }
+
+  .status-block.online .bullet {
+    background-color: lightgreen;
+  }
+  .status-block.offline .bullet {
+    background-color: red;
+  }
+  .status-block.error .bullet {
+    background-color: red;
+  }
+  .status-block.online .status-message {
+    color: lightgreen;
+  }
+  .status-block.offline .status-message {
+    color: red;
+  }
+  .status-block.error .status-message {
+    color: red;
+  }
+</style>
