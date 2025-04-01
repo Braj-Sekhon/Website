@@ -1,2 +1,7 @@
-<p>ERROR 404: PAGE NOT FOUND</p>
-<a href="/">Go to home</a>
+<script>
+  import PageWrapper from "$lib/components/PageWrapper.svelte";
+</script>
+
+<PageWrapper title_text="Error">
+  <p>ERROR 404: PAGE NOT FOUND</p>
+</PageWrapper>

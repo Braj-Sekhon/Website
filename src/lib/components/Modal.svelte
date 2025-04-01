@@ -15,7 +15,7 @@
   });
 </script>
 
-<div id="modal" class="modal large">
+<div id="modal" class="modal medium">
   <button onclick={close} id="close-button">Close</button>
   <slot />
 </div>
@@ -25,21 +25,27 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    background-image: linear-gradient(30deg, black 50%, white 100%);
+    background-image: linear-gradient(
+      15deg,
+      orange 0%,
+      white 50%,
+      lightblue 100%
+    );
     transform: translate(-50%, -50%);
     animation: none;
     z-index: 10;
+    height: auto;
+  }
+  .modal * {
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .large {
-    width: 600px;
-    height: 400px;
+    width: 60vw;
   }
   .medium {
-    width: 400px;
-    height: 250px;
+    width: 40vw;
   }
   .small {
-    width: 200px;
-    height: 100px;
+    width: 20vw;
   }
 </style>

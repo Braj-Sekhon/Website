@@ -159,6 +159,9 @@ p a {
   display: inline;
   text-align: center;
 }
+button {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .fixed-br {
   position: fixed;
   bottom: 25px;
@@ -192,12 +195,14 @@ a::before {
 }
 
 a,
-button {
+button,
+input {
   transition: box-shadow 0.25s;
 }
 
 a:hover,
-button:hover {
+button:hover,
+input:hover {
   box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
 }
 
