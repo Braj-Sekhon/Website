@@ -1,5 +1,5 @@
 <script>
-  import Title from "$lib/components/Title.svelte";
+  import PageWrapper from "$lib/components/PageWrapper.svelte";
   import { onMount } from "svelte";
 
   onMount(async function () {
@@ -36,23 +36,24 @@
   });
 
   export const CSR = false;
+  export const SSR = true;
 </script>
 
-<Title header="Server Status"></Title>
-<a href="/">Back to Home</a>
-<p id="mc" class="status-block">
-  <span class="bullet"></span>
-  <span class="status-message"></span>
-  <span>
-    Minecraft<span class="separator">:</span>mc.ybgames.fyi
-  </span>
-</p>
-<p id="tr" class="status-block">
-  <span class="bullet"></span>
-  <span class="status-message"></span>
-  <span>
-    Terraria<span class="separator">:</span>tr.ybgames.fyi<span
-      class="separator">|</span
-    >Port: 41112
-  </span>
-</p>
+<PageWrapper title_text="Server Status">
+  <p id="mc" class="status-block">
+    <span class="bullet"></span>
+    <span class="status-message"></span>
+    <span>
+      Minecraft<span class="separator">:</span>mc.ybgames.fyi
+    </span>
+  </p>
+  <p id="tr" class="status-block">
+    <span class="bullet"></span>
+    <span class="status-message"></span>
+    <span>
+      Terraria<span class="separator">:</span>tr.ybgames.fyi<span
+        class="separator">|</span
+      >Port: 41112
+    </span>
+  </p>
+</PageWrapper>

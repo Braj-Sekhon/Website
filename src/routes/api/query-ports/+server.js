@@ -45,7 +45,7 @@ export async function GET() {
         }
       }
     } catch (error) {
-      console.warn(error);
+      //console.warn(error);
       await error_data(data, key);
     }
   }
