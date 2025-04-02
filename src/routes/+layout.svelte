@@ -4,11 +4,12 @@
   import Modal from "$lib/components/Modal.svelte";
   import Notification from "$lib/components/Notification.svelte";
   import { notify } from "$lib/utils";
+  import { username, userid, update_user } from "$lib/stores/user";
+  import type { EventHandler } from "svelte/elements";
   export let about_link = "/about";
   export let about_text = "About";
 
   let is_blogger = false;
-  let username = "User";
 
   let is_open = false;
   let cur_window = "";
@@ -21,7 +22,7 @@
     is_open = true;
     cur_window = "login";
   }
-  async function check_if_is_blogger(userid) {
+  async function check_if_is_blogger() {
     try {
       const { data, error } = await supabase.from("bloggers").select("*");
       if (error) {
@@ -33,18 +34,70 @@
       console.warn(error.message);
     }
   }
+  async function signup_user(ev: SubmitEvent) {
+    ev.preventDefault();
+    const data: FormData = new FormData(ev.target as HTMLFormElement);
+    const email = data.get("email").toString();
+    const password = data.get("password").toString();
+    const confirm_password = data.get("confirm-password").toString();
+    const username = data.get("username").toString();
+
+    if (confirm_password !== password) {
+      notify("Passwords do not match!");
+    } else {
+      const { data, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            username: username,
+          },
+        },
+      });
+      if (error) {
+        notify(error.message);
+      } else {
+        notify("Successfully created account!");
+        update_user();
+      }
+    }
+  }
+  async function login_user(ev: SubmitEvent) {
+    ev.preventDefault();
+    const data: FormData = new FormData(ev.target as HTMLFormElement);
+    const email = data.get("email").toString();
+    const password = data.get("password").toString();
+
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
+
+    if (error) {
+      notify(error.message);
+    } else {
+      notify("Successfully logged in!");
+      update_user();
+    }
+  }
 
   onMount(() => {
     get_user().then(
       (res) => {
-        username = res.data.user.user_metadata.username;
-        check_if_is_blogger(res.data.user.id);
+        if (res && res.data && res.data.user !== null) {
+          $username = res.data.user.user_metadata.username;
+          $userid = res.data.user.id;
+        }
       },
       (error) => {
         console.warn(error);
       }
     );
   });
+
+  $: if ($userid) {
+    check_if_is_blogger();
+  }
 </script>
 
 <div id="footer-nav-container">
@@ -53,12 +106,12 @@
     <button onclick={login}> Login </button>
     <a href={about_link}>{about_text}</a>
     {#if is_blogger === true}
-      <a href="blog/create">Create Post</a>
+      <a href="/blogs/create">Create Post</a>
     {/if}
   </nav>
   <footer>
     <p>
-      Hello, {username}.
+      Hello, {$username}.
     </p>
   </footer>
 </div>
@@ -66,7 +119,7 @@
 {#if is_open}
   <Modal bind:is_open>
     {#if cur_window === "signup"}
-      <form method="POST" action="/auth?/signup">
+      <form onsubmit={signup_user}>
         <input name="email" type="email" placeholder="email" />
         <input name="username" type="text" placeholder="username" />
         <input name="password" type="password" placeholder="password" />
@@ -78,7 +131,7 @@
         <input name="submit" type="submit" value="Signup" />
       </form>
     {:else}
-      <form method="POST" action="/auth?/login">
+      <form onsubmit={login_user}>
         <input name="email" type="text" placeholder="email" />
         <input name="password" type="password" placeholder="password" />
         <input name="submit" type="submit" value="Login" />

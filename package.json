@@ -20,6 +20,7 @@
 		"@supabase/supabase-js": "^2.49.4",
 		"@sveltejs/adapter-node": "^5.2.12",
 		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/adapter-vercel": "^5.6.3",
 		"minecraft-server-util": "^5.4.4"
 	}
 }

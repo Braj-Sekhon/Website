@@ -8,7 +8,7 @@
   <a href="/status/">Game Server Statuses</a>
   <a href="/minecraft/">Minecraft Server</a>
   <a href="/terraria/">Terraria Server</a>
-  <a href="/blog/">Blog</a>
+  <a href="/blogs/">Blog</a>
   <a
     class="external-link"
     href="https://www.roblox.com/communities/11205205/Divined-Lineage#!/about"

@@ -9,18 +9,19 @@
     duration?: number;
   } = $props();
 
+  let visible: boolean = $state(true);
+
   onMount(() => {
-    const notification: HTMLDivElement = document.getElementById(
-      "notification"
-    ) as HTMLDivElement;
     setTimeout(() => {
-      notification.remove();
+      visible = false;
     }, duration);
   });
 </script>
 
-<div id="notification">
-  <p>
-    {message}
-  </p>
-</div>
+{#if visible}
+  <div id="notification">
+    <p>
+      {message}
+    </p>
+  </div>
+{/if}
