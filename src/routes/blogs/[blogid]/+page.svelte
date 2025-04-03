@@ -3,7 +3,7 @@
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
-  // data.text = data.text.replaceAll("\\n", "<br />");
+  //  data.text = data.text.replaceAll("\\n", "<br />");
 </script>
 
 <PageWrapper title_text={data.title}>

@@ -32,9 +32,19 @@
       lightblue 100%
     );
     transform: translate(-50%, -50%);
-    animation: none;
     z-index: 10;
     height: auto;
+    transition: scale 0.25s;
+    animation: modal-slide-in 0.25s ease-in-out;
+  }
+
+  @keyframes modal-slide-in {
+    0% {
+      scale: 0%;
+    }
+    100% {
+      scale: 100%;
+    }
   }
   .modal * {
     background-color: rgba(0, 0, 0, 0.5);
