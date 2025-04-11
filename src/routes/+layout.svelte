@@ -98,6 +98,9 @@
   $: if ($userid) {
     check_if_is_blogger();
   }
+
+  let link = "/profiles/" + $userid + "`" + $username;
+  $: link = "/profiles/" + $userid + "`" + $username;
 </script>
 
 <div id="footer-nav-container">
@@ -111,7 +114,7 @@
   </nav>
   <footer>
     <p>
-      Hello, {$username}.
+      Hello, {#if $userid}<a href={link}>{$username}</a>{:else}User{/if}.
     </p>
   </footer>
 </div>

@@ -5,6 +5,7 @@
   import { notify } from "$lib/utils";
   import type { User } from "@supabase/supabase-js";
   import PageWrapper from "$lib/components/PageWrapper.svelte";
+  import { userid } from "$lib/stores/user";
 
   let is_open = $state(false);
   let cur_window = $state("...");
@@ -22,6 +23,7 @@
     mount(Message, {
       target: document.getElementById("messages") as HTMLDivElement,
       props: {
+        uid: payload[2],
         content: payload[1],
         username: payload[0],
       },
@@ -54,18 +56,23 @@
         "postgres_changes",
         { event: "INSERT", schema: "public", table: "messages" },
         (payload) => {
-          makeMessage([payload.new.username, payload.new.message]);
+          makeMessage([
+            payload.new.username,
+            payload.new.message,
+            payload.new.uid,
+          ]);
         }
       )
       .subscribe();
 
     async function send_msg() {
-      const msg = messageBox.value.trim();
+      const msg = messageBox.innerText.trim();
       if (msg.length > 0 && msg !== null && msg != "") {
         const res = await supabase.from("messages").insert({
           message: msg,
+          uid: $userid,
         });
-        messageBox.value = "";
+        messageBox.innerText = "";
       }
     }
 
@@ -87,7 +94,7 @@
     <p>Messages will show up here</p>
   </div>
   <div class="horizontal border">
-    <input id="message" placeholder="Type here to send a message" />
+    <p id="message" contenteditable="true">Type here to send a message</p>
     <button id="send">Send</button>
   </div>
 </PageWrapper>
@@ -98,10 +105,6 @@
     justify-content: center;
     align-content: flex-start;
     flex-direction: column;
-    width: 100%;
-  }
-  #message {
-    width: 82.5%;
   }
   #send {
     width: 15%;

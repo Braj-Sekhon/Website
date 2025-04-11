@@ -1,7 +1,8 @@
 <script>
+  export let uid = "";
   export let username = "";
   export let content = "";
-  const link = "/chat/profiles/" + username;
+  const link = "/profiles/" + uid + "`" + username + "/";
 </script>
 
 <p><a href={link}>{username}</a>: {content}</p>
