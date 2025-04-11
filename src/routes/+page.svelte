@@ -9,6 +9,7 @@
   <a href="/minecraft/">Minecraft Server</a>
   <a href="/terraria/">Terraria Server</a>
   <a href="/blogs/">Blog</a>
+  <a href="/chat/">Chat</a>
   <a
     class="external-link"
     href="https://www.roblox.com/communities/11205205/Divined-Lineage#!/about"

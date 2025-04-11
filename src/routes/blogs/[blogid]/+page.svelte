@@ -9,6 +9,7 @@
 <PageWrapper title_text={data.title}>
   <p>Written by {data.author}</p>
   <p>{data.text}</p>
+  <a href="/blogs">Back to Blogs</a>
 </PageWrapper>
 
 <style>
