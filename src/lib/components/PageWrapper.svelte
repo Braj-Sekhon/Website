@@ -1,6 +1,5 @@
 <script lang="ts">
   // I was having issues with using +layout.svelte for modularity, so everything will be wrapped with this guy
-  import "$lib/styles/global.css";
   import Title from "$lib/components/Title.svelte";
 
   export let title_text = "Braj Sekhon";

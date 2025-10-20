@@ -1,40 +1,55 @@
-# First Website
+# Self-Hosted Web Infrastructure
 
-Send me money.
+The website that taught me how the internet actually works—from Apache on my PC to SvelteKit on Vercel.
 
-## Steps to Build
+## The Journey
 
-Unclear instructions on how to build, which ends up in you sending me 1 million dollars.
+Rather than using managed hosting platforms, I wanted to understand web infrastructure from first principles: how servers, domains, and networks actually work under the hood.
 
-## Steps to Deploy
+### Phase 1 - Local Hosting
 
-So like, go watch a thousand YouTube videos cuz I'm not telling u how 2.
+- Configured Apache web server on personal PC
+- Deployed basic HTML/CSS/JS site locally
+- Learned about ports, HTTP requests, server configuration files
 
-## Our Mission
+### Phase 2 - Internet Connectivity
 
-To create robots that will exterminate the human race because it sounds cool.
+- Implemented CloudFlare Argo Tunnel for secure public access without port forwarding
+- Self-taught DNS architecture: A records, CNAME records, nameservers
+- Configured SSL/TLS certificates for HTTPS
 
-## Conclusion
+### Phase 3 - Modern Stack Migration
 
-Thanks you reading I am top #1 engineer India my English of best.
+- Migrated from static HTML to SvelteKit framework
+- Learned component-based architecture, routing, and state management
+- Eventually deployed to cloud hosting (Vercel) for reliability
 
-I hope great comes with my offers of all P.H.D. for creating this projects.
+### Phase 4 - Backend Services
 
-I will continue to make best efforts of the gods to advance human kind.
+- Built Node.js backend to monitor Minecraft and Terraria servers running on same PC
+- Implemented real-time server status checking
+- Created API endpoints for external queries
 
-ਮੰਮੀ! ਮੇਰੀ ਚਾਹ ਕਿੱਥੇ ਹੈ?
+## Current State
 
-जी जी जी जी जी
+This is a refactored version focused on the technical infrastructure and learning journey, with some experimental features removed for clarity.
 
-लेकिन गंभीरता से गलत भाषा. You probably know what to do already but here
+I've streamlined this version to focus on the core portfolio content and infrastructure lessons learned, removing some of the hobby-focused elements.
 
-## Real
+## Tech Stack
 
-Real
+- **Frontend:** HTML/CSS/JS → SvelteKit
+- **Backend:** Node.js, Apache (formerly)
+- **Infrastructure:** CloudFlare Argo Tunnel (formerly), DNS management
+- **Deployment:** Self-hosted → Vercel (cloud)
 
-## Steps to Do the Thing
+## Running Locally
 
-`npm install`
-`npm run dev`
+```bash
+pnpm install
+pnpm run dev
+```
 
-## Now YOua Are a Master Programmer
+## What I Learned
+
+Understanding infrastructure at this level demystified the "magic" of web development. I now understand the full stack from network packets to UI components, which makes me a more effective developer when debugging production issues or architecting new systems. This hands-on approach taught me far more than any tutorial could.
