@@ -18,7 +18,7 @@
           "a"
         ) as HTMLAnchorElement;
         link.href = "/blogs/" + val.id.toString();
-        link.innerHTML = val.title + " by " + val.author;
+        link.innerHTML = val.title;
         blog_list.appendChild(link);
       });
     }
