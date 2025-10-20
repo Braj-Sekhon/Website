@@ -3,7 +3,7 @@
   import "$lib/styles/global.css";
   import Title from "$lib/components/Title.svelte";
 
-  export let title_text = "Ybg's Website";
+  export let title_text = "Braj Sekhon";
   export let show_back_to_home = true;
   export let show_title = true;
 </script>

@@ -13,7 +13,6 @@ export const load: PageLoad = async ({ params }) => {
     data.forEach((val) => {
       object_data["title"] = val.title;
       object_data["text"] = val.text;
-      object_data["author"] = val.author;
     });
     return object_data;
   }

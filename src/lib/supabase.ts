@@ -1,9 +1,13 @@
 import { createClient } from "@supabase/supabase-js";
+import {
+  PUBLIC_SUPABASE_URL,
+  PUBLIC_SUPABASE_ANON_KEY,
+} from "$env/static/public";
 
-export const supabase = createClient(
-  "https://naxystpijhawvwhvonfu.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5heHlzdHBpamhhd3Z3aHZvbmZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDI3ODE1MzAsImV4cCI6MjA1ODM1NzUzMH0.GuzXgizbY427Mmn3KYlk4vTrwSyHVFmwSrYE5KzRhN4"
-);
+const supabaseUrl = PUBLIC_SUPABASE_URL;
+const supabaseKey = PUBLIC_SUPABASE_ANON_KEY;
+
+export const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function get_user() {
   return supabase.auth.getUser();

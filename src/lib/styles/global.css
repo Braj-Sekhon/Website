@@ -115,16 +115,6 @@ h1 {
   animation: 0.5s fade-in ease;
 }
 
-.logo {
-  position: absolute;
-  left: 5px;
-  top: -5px;
-  width: 200px;
-  height: auto;
-  border: 0px;
-  animation: none;
-}
-
 @keyframes fade-in {
   0% {
     opacity: 0%;

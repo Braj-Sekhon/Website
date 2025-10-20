@@ -41,5 +41,8 @@
 <PageWrapper title_text="Create Blog Post">
   <p id="title" contenteditable="true">Title</p>
   <p id="text" contenteditable="true">Text</p>
-  <button id="postbutton" onclick={post}>Post</button>
+  <div>
+    <button id="postbutton" onclick={post}>Post</button>
+    <p id="password" contenteditable="true">Password</p>
+  </div>
 </PageWrapper>
