@@ -26,15 +26,13 @@ Rather than using managed hosting platforms, I wanted to understand web infrastr
 
 ### Phase 4 - Backend Services
 
-- Built Node.js backend to monitor Minecraft and Terraria servers running on same PC
-- Implemented real-time server status checking
-- Created API endpoints for external queries
+- Built Node.js backend to monitor Minecraft and Terraria servers on the same PC:
+  - Status (online / offline)
+  - Player Count
 
 ## Current State
 
-This is a refactored version focused on the technical infrastructure and learning journey, with some experimental features removed for clarity.
-
-I've streamlined this version to focus on the core portfolio content and infrastructure lessons learned, removing some of the hobby-focused elements.
+This is a refactored version of my first website focused on the technical infrastructure and learning journey — experimental features are removed.
 
 ## Tech Stack
 
@@ -52,4 +50,4 @@ pnpm run dev
 
 ## What I Learned
 
-Understanding infrastructure at this level demystified the "magic" of web development. I now understand the full stack from network packets to UI components, which makes me a more effective developer when debugging production issues or architecting new systems. This hands-on approach taught me far more than any tutorial could.
+Through this whole project, the world of web development was demystified for me. I now understand the full stack from network packets to UI components, which makes me a more effective developer when debugging production issues or architecting new systems. This hands-on approach taught me far more than any tutorial could.
