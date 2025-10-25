@@ -16,19 +16,19 @@ Rather than using managed hosting platforms, I wanted to understand web infrastr
 
 - Implemented CloudFlare Argo Tunnel for secure public access without port forwarding
 - Self-taught DNS architecture: A records, CNAME records, nameservers
-- Configured SSL/TLS certificates for HTTPS
 
 ### Phase 3 - Modern Stack Migration
 
 - Migrated from static HTML to SvelteKit framework
 - Learned component-based architecture, routing, and state management
-- Eventually deployed to cloud hosting (Vercel) for reliability
+- Eventually deployed to cloud hosting (Vercel)
 
 ### Phase 4 - Backend Services
 
 - Built Node.js backend to monitor Minecraft and Terraria servers on the same PC:
   - Status (online / offline)
   - Player Count
+- Used Supabase to implement auth, chatting, and blogging
 
 ## Current State
 
